@@ -1,0 +1,6 @@
+#Compiled file
+.vscode/
+__pycache__/
+out/
+tools/
+external/fatfs/secret_key.bin

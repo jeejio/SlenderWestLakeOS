@@ -1,0 +1,6 @@
+*.o
+libmbed*
+*.sln
+*.vcxproj
+
+# Automatically generated files
