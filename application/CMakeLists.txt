@@ -17,6 +17,7 @@ idf_component_register(SRCS "main.c"
                         "edu_lan/AppRotaryEncoder.c"
                         "edu_lan/AppSteeringGear.c"
                         "edu_lan/AppWaterPump.c"
+                        "single_switch/AppSingleSwitch.c"
 
                     INCLUDE_DIRS "." "${jeejio_path}/kernel/include/freertos"
                         "${jeejio_path}/application/edu_lan"

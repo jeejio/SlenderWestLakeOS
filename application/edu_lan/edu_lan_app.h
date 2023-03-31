@@ -56,6 +56,7 @@ extern "C"
         STEERING_GEAR_ID,
         WATER_PUMP_ID,
         BLOOD_OXYGEN_ID,
+        SINGLE_SWITCH_ID,
         SENSOR_MAX_ID,
     } DevType_t;
 

@@ -11,11 +11,13 @@ set(includes  "include"
                "${jeejio_path}/hal/include"
                "${jeejio_path}/driver/jeejioxie_esp32c3/chip/esp_wireless/esp_wifi/include"
      )
+     
+     
 
 
-idf_component_register(SRCS  
+idf_component_register(SRCS
     INCLUDE_DIRS  ${includes}
-    PRIV_REQUIRES lwip kernel esp_netif)
+    PRIV_REQUIRES lwip kernel esp_netif sensor)
 
 
 set(LIBS libhal)

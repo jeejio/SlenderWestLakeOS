@@ -130,7 +130,8 @@ static void vTestMQTT(void)
         lSetDeviceType(devType);
     }
 
-    devType = 12;
+
+    devType = SINGLE_SWITCH_ID;
     printf("Get device type:%d\r\n", devType);
 
     if (lRegister_DevApiProcess(JeeRPC_Call))

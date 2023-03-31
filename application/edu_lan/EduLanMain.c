@@ -30,6 +30,7 @@ extern DevObject_t RFID_Object;
 extern DevObject_t SteeringGearObject;
 extern DevObject_t WaterPumpObject;
 extern DevObject_t BloodOxygenObject;
+extern DevObject_t SingleSwitchObject;
 
 DevObject_t *DevObjectGroup[] =
     {
@@ -51,6 +52,7 @@ DevObject_t *DevObjectGroup[] =
         &SteeringGearObject,
         &WaterPumpObject,
         &BloodOxygenObject,
+        &SingleSwitchObject,
 };
 
 /****************devType read and write********************/

@@ -15,8 +15,8 @@
 #include "freertos/timers.h"
 #include "esp_wifi.h"
 
-char *ssid = "yul_test";
-char *password = "jeejio123";
+char *ssid = "Lenovo_Xu";
+char *password = "11223344";
 
 static void wifi_sta_disconnect(int event, struct rt_wlan_buff *buff, void *parameter);
 static void wifi_sta_connect_fail(int event, struct rt_wlan_buff *buff, void *parameter);
