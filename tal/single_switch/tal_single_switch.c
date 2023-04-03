@@ -17,6 +17,7 @@
 #include "hal_sensor.h"
 #include "auto_init.h"
 
+#define SINGLE_SWITCH_NAME  "button_SWITCH"
 jee_device_t single_switch_sensor_dev = NULL;
 static TalSwitchInfo_t GetInfo;
 void lTalSingleSwitchGetInfo(void)
@@ -39,7 +40,7 @@ int lTalSingleSwitchModeReceive(void)
 int vTalSingleSwitchInit(void)
 {
     // 查找设备
-    single_switch_sensor_dev = jee_device_find("button665_SWITCH");
+    single_switch_sensor_dev = jee_device_find(SINGLE_SWITCH_NAME);
     if (single_switch_sensor_dev == JEE_NULL)
     {
         printf("can not find sensor Model\n");

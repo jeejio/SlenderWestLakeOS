@@ -40,4 +40,3 @@ target_compile_options(${COMPONENT_LIB} PRIVATE "-Wno-format")
 set(image "${jeejio_path}/external/fatfs")
 fatfs_create_spiflash_image(storage ${image} FLASH_IN_PROJECT PRESERVE_TIME)
 jee_auto_init_list_register()
-

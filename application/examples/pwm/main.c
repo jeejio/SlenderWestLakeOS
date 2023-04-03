@@ -55,7 +55,8 @@ void app_main(void)
         .speed_mode = LEDC_MODE,
         .period = 1000*200,    // 单位ns,这里等价于5khz
         .timer_num = LEDC_TIMER,
-        .pin_num = LEDC_OUTPUT_IO
+        .pin_num = LEDC_OUTPUT_IO,
+        .bit_resolution = 2
         };
 
     jee_device_control(pwm_dev, PWM_CMD_INIT, (void *)&pwm_cfg);

@@ -111,6 +111,9 @@ static int webclient_read_line(struct webclient_session *session, char *buffer, 
     int rc, count = 0;
     char ch = 0, last_ch = 0;
 
+    //RT_ASSERT(session);
+    //RT_ASSERT(buffer);
+
     /* Keep reading until we fill the buffer. */
     while (count < size)
     {
@@ -1869,4 +1872,3 @@ __exit:
 
     return totle_length;
 }
-

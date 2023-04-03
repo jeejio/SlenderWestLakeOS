@@ -320,4 +320,3 @@ MSH_CMD_EXPORT(wget, Get file by URI: wget <URI> <filename>.);
 #endif /* FINSH_USING_MSH */
 
 #endif /* RT_USING_DFS */
-

@@ -50,25 +50,33 @@ static struct jee_pwm_configuration pwm_cfg_for1 = {
     .speed_mode = LEDC_MODE,
     .period = 1000 * 20000, // 单位ns,这里等价于5khz
     .timer_num = LEDC_TIMER_FOR1,
-    .pin_num = LEDC_OUTPUT_IO_FOR1};
+    .pin_num = LEDC_OUTPUT_IO_FOR1,
+    .bit_resolution=13
+    };
 static struct jee_pwm_configuration pwm_cfg_for2 = {
     .channel = LEDC_CHANNEL_FOR2,
     .speed_mode = LEDC_MODE,
     .period = 1000 * 20000, // 单位ns,这里等价于5khz
     .timer_num = LEDC_TIMER_FOR2,
-    .pin_num = LEDC_OUTPUT_IO_FOR2};
+    .pin_num = LEDC_OUTPUT_IO_FOR2,
+    .bit_resolution=13
+    };
 static struct jee_pwm_configuration pwm_cfg_back1 = {
     .channel = LEDC_CHANNEL_BACK1,
     .speed_mode = LEDC_MODE,
     .period = 1000 * 20000, // 单位ns,这里等价于5khz
     .timer_num = LEDC_TIMER_BACK1,
-    .pin_num = LEDC_OUTPUT_IO_BACK1};
+    .pin_num = LEDC_OUTPUT_IO_BACK1,
+    .bit_resolution=13
+    };
 static struct jee_pwm_configuration pwm_cfg_back2 = {
     .channel = LEDC_CHANNEL_BACK2,
     .speed_mode = LEDC_MODE,
     .period = 1000 * 20000, // 单位ns,这里等价于5khz
     .timer_num = LEDC_TIMER_BACK2,
-    .pin_num = LEDC_OUTPUT_IO_BACK2};
+    .pin_num = LEDC_OUTPUT_IO_BACK2,
+    .bit_resolution=13
+    };
 static jee_device_t motor_pwm_dev = NULL;
 
 static uint32_t motor_duty = SLOW_SPEED;

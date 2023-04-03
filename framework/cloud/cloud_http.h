@@ -4,7 +4,7 @@
 #include "webclient.h"
 #include "string.h"
 #include "cJSON.h"
-
+#define DEV  (0)
 
 #define TOKEN_LENGTH (512)
 

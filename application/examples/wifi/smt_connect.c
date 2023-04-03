@@ -51,7 +51,7 @@ static void wlan_connect_task(void *param)
         return;
     }
 
-    /* 娉ㄥ唽 WiFi 浜嬩欢*/
+    /* 注册 WiFi 事件*/
     rt_wlan_register_event_handler(RT_WLAN_EVT_SCAN_REPORT, wifi_scan_report, NULL);
     rt_wlan_register_event_handler(RT_WLAN_EVT_SCAN_DONE, wifi_scan_done, NULL);
     rt_wlan_register_event_handler(RT_WLAN_EVT_STA_CONNECTED, wifi_sta_connected, NULL);
@@ -62,15 +62,15 @@ static void wlan_connect_task(void *param)
     rt_wlan_register_event_handler(RT_WLAN_EVT_AP_DISASSOCIATED, wifi_ap_disassocited, NULL);
 
 #if 1
-    /* 璁剧疆宸ヤ綔妯″紡*/
+    /* 设置工作模式*/
     vTaskDelay(500 / portTICK_PERIOD_MS);
-    rt_wlan_set_mode(RT_WLAN_DEVICE_STA_NAME, RT_WLAN_STATION); //sta妯″紡
+    rt_wlan_set_mode(RT_WLAN_DEVICE_STA_NAME, RT_WLAN_STATION); //sta模式
     //vTaskDelay(100 / portTICK_PERIOD_MS);
 
-    /* 鎵弿 WiFi 缃戠粶*/
+    /* 扫描 WiFi 网络*/
     // rt_wlan_scan_with_info(JEE_NULL);
 
-    /* 缃戠粶杩炴帴 */
+    /* 网络连接 */
     ret = rt_wlan_connect(ssid, password);
     if (ret != JEE_EOK)
     {
@@ -188,7 +188,7 @@ static void wlan_connect_task(void *param)
     LOGI(DBG_TAG, "rt_wlan_ap_get_country country = %d", country);
 #endif
 
-    /* udp缃戠粶娴嬭瘯 */
+    /* udp网络测试 */
     vTaskDelay(2000 / portTICK_PERIOD_MS);
     net_socket socket = net_socket_udp_open(ipaddr, port);
 
@@ -209,9 +209,9 @@ void wlan_connect_init(void)
 
 
 
-// 杈撳叆鍙傛暟锛歟vent    浜嬩欢绫诲瀷
-//          buff     鏌ユ壘鐨刉iFi鍙傛暟
-//          parameter 浜嬩欢娉ㄥ唽浼犲叆鐨勫弬鏁?
+// 输入参数：event    事件类型
+//          buff     查找的WiFi参数
+//          parameter 事件注册传入的参数
 
 static void wifi_scan_report(int event, struct rt_wlan_buff *buff, void *parameter)
 {

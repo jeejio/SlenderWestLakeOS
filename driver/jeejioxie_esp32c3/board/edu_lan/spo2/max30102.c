@@ -727,6 +727,8 @@ void led_pwm_init()
     pwm_cfg.period = (1e9) / PWM_FREQUENCY;
     pwm_cfg.pin_num = PWM_OUTPUT_IO;
     pwm_cfg.speed_mode = PWM_MODE;
+    pwm_cfg.bit_resolution=13;
+
     // 配置设备
     jee_device_control(pwmDev, PWM_CMD_INIT, (void *)&pwm_cfg);
 #endif

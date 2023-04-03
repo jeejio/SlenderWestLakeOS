@@ -38,6 +38,7 @@ struct jee_pwm_configuration
     jee_uint32_t speed_mode;
     jee_uint32_t pin_num;
     jee_uint32_t duty;
+    uint8_t bit_resolution; /*duty_resolution:1bit 2bit 3bit 4bit eg... */
 
     /*
      * JEE_TRUE  : The channel of pwm is complememtary.

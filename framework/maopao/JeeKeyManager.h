@@ -12,6 +12,8 @@ extern "C"
 #define DEVICE_ID_BYTES 8
 
 extern int32_t lGetIntDeviceID(int64_t *data);
+extern int32_t lGetIntDeviceIDFromFlash(int64_t *data);
+
 
 #ifdef __cplusplus
 }

@@ -23,7 +23,7 @@ static void pwm_config(struct jee_pwm_configuration *cfg)
     ledc_timer_config_t ledc_timer = {
         .speed_mode       = cfg->speed_mode,
         .timer_num        = cfg->timer_num,
-        .duty_resolution  = LEDC_TIMER_13_BIT,
+        .duty_resolution  = (ledc_timer_bit_t)(cfg->bit_resolution),//LEDC_TIMER_13_BIT,
         .freq_hz          = (1e9)/(cfg->period),
         .clk_cfg          = LEDC_AUTO_CLK
     };

@@ -16,7 +16,7 @@
 #include "freertos/device.h"
 #include "hal_sensor.h"
 
-jee_device_t button665_sensor_dev = NULL;
+jee_device_t button_sensor_dev = NULL;
 static ButtonPanelInfo_t ButtonPanelInfo ={
     .code =1,
     .button_mode =0,
@@ -25,7 +25,7 @@ static ButtonPanelInfo_t ButtonPanelInfo ={
 ButtonPanelInfo_t * cTalButtonPanelOnReceive(void)
 {
     int buf[2];
-    jee_device_read(button665_sensor_dev,NULL,(void *)buf,sizeof(buf));
+    jee_device_read(button_sensor_dev,NULL,(void *)buf,sizeof(buf));
     ButtonPanelInfo.button_mode=buf[1];
     ButtonPanelInfo.value=buf[0];
     return &ButtonPanelInfo;
@@ -47,8 +47,8 @@ int cTalButtonPanelGetButtonMode(void)
 int vTalButtonPanelInit(void)
 {
     // 查找设备
-    button665_sensor_dev = jee_device_find("button665_BT665");
-    if (button665_sensor_dev == JEE_NULL)
+    button_sensor_dev = jee_device_find("button_BT665");
+    if (button_sensor_dev == JEE_NULL)
     {
         printf("can not find sensor Model\n");
         return -1;
@@ -58,7 +58,7 @@ int vTalButtonPanelInit(void)
 
     // 打开设备
     jee_err_t result = JEE_EOK;
-    result = jee_device_open(button665_sensor_dev, JEE_DEVICE_FLAG_RDONLY);
+    result = jee_device_open(button_sensor_dev, JEE_DEVICE_FLAG_RDONLY);
     if (result != JEE_EOK)
     {
         printf("can not open senor device\n");

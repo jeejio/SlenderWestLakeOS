@@ -20,7 +20,8 @@ static struct jee_pwm_configuration pwm_cfg = {
     .speed_mode = STEERING_GEAR_MODE,
     .period = 1000*20000,    // 单位ns,这里等价于5khz
     .timer_num = STEERING_GEAR_TIMER,
-    .pin_num = STEERING_GEAR_OUTPUT_IO
+    .pin_num = STEERING_GEAR_OUTPUT_IO,
+    .bit_resolution=13
     };
 
 void sg90Init(void)

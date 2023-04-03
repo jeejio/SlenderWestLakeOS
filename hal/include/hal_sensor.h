@@ -61,9 +61,9 @@ extern "C" {
 #define JEE_SENSOR_CLASS_SIX_AXIS       (27) /* Six-axis sensor   */
 #define JEE_SENSOR_CLASS_RFID           (28) /* Radio Frequency Identification */
 #define JEE_SENSOR_CLASS_HYETOMETER     (29) /* Hyetometer sensor */
-#define JEE_SENSOR_CLASS_BUTTON_PANEL   (30) /* Button panel      */
+#define JEE_SENSOR_CLASS_BUTTON         (30) /* Button       */
 #define JEE_SENSOR_CLASS_LEDARRAY       (31) /* led array         */
-#define JEE_SENSOR_CLASS_GETSTURE       (32) /* led array         */
+#define JEE_SENSOR_CLASS_GETSTURE       (32) /* Getsure sensor    */
 #define JEE_SENSOR_CLASS_SCANNER        (33) /* code scanner      */
 #define JEE_SENSOR_CLASS_JOYSTICK       (34) /* joystick          */
 #define JEE_SENSOR_CLASS_IOEXPAND       (35) /* io expand         */
@@ -258,22 +258,15 @@ struct jee_sensor_ops
     jee_err_t (*control)(struct jee_sensor_device *sensor, int cmd, void *arg);
 };
 
-
-
-
-
 int jee_hw_sensor_register(jee_sensor_t      sensor,
                           const char        *name,
                           jee_uint32_t       flag,
                           void              *data);
-
-
-extern char *const sensor_name_str;
-
+                          
+extern char *const sensor_name_str[];
 
 #ifdef __cplusplus
 }
 #endif
 
 #endif /* __SENSOR_H__ */
-

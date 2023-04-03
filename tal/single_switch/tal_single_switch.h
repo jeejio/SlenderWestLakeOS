@@ -20,7 +20,7 @@ typedef struct
 
 
 /**
- * @brief       游戏摇杆初始化
+ * @brief       单键开关初始化
  *
  * @return      无
  */

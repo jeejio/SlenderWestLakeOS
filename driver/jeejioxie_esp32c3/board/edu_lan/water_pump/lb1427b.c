@@ -43,6 +43,8 @@ void lb1427Init(void)
     cfg.period = (1e9) / PWM_FREQUENCY;
     cfg.pin_num = PWM_OUTPUT_IO;
     cfg.speed_mode = PWM_MODE;
+    cfg.bit_resolution=13;
+
     // 配置设备
     jee_device_control(pwmDev, PWM_CMD_INIT, (void *)&cfg);
 

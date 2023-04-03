@@ -86,7 +86,7 @@ int sensorSingleSwitchInit(const char *name, struct jee_sensor_config *cfg)
 
     memset(sensor, 0, sizeof(struct jee_sensor_device));
 
-    sensor->info.type = JEE_SENSOR_CLASS_BUTTON_PANEL;
+    sensor->info.type = JEE_SENSOR_CLASS_BUTTON;
     sensor->info.vendor = JEE_SENSOR_VENDOR_UNKNOWN;
     sensor->info.model = "switch0";
 

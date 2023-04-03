@@ -32,15 +32,15 @@ char *const sensor_name_str[] =
     "six-axis_",   /* Six-axis sensor   */
     "rfid_",       /* Radio Frequency Identification */
     "hyetometer_", /* Hyetometer sensor */
-    "button665_",  /* Button panel      */
+    "button_",     /* Button       */
     "led_",        /* led array         */
     "gets_",       /* getsture          */
     "scan_",       /* scanner           */
     "joystick_",   /* joystick          */
     "ioexpand_",   /* io expand           */
-    "smoke_",      /* io expand           */
-    "co_",         /* io expand           */
-    "lcd_",        /* io expand           */
+    "smoke_",      /* Smoke alarm         */
+    "co_",         /* carbon monoxide           */
+    "lcd_",        /* Liquid Crystal Display     */
 };
 
 
